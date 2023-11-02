@@ -28,46 +28,7 @@
             
         </div>
         <button class="btn btn-success" @click="createSubscription">Add New Subscription</button>
-        <div class="List">
-            <div class="row justify-content-center">
-                <div class="col-md-12" style="padding: 5%">
-                    <h3 class="text-center">Subscriptions List</h3>
-
-                    <table class="table align-middle">
-                        <thead>
-                            <tr>
-                                <th class="h6"><strong>Subscription</strong></th>
-                                <th class="h6"><strong>Description</strong></th>
-                                <th class="h6"><strong>Amount</strong></th>
-                                <th class="h6"><strong>Frequency</strong></th>
-                                <th class="h6"><strong>Actions</strong></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr v-for="subscription in Subscriptions" :key="subscription.key">
-                                <td>{{ subscription.name }}</td>
-                                <td class="d-none d-sm-table-cell">{{ subscription.description }}</td>
-                                <td>${{ subscription.amount }}</td>
-                                <td>{{ subscription.frequency }}</td>
-                                <td>
-                                    <router-link :to="{ name: 'edit', params: { id: subscription.key } }"
-                                        class="btn btn-primary btn-sm px-3">
-                                        Edit
-                                    </router-link>
-                                    <button @click.prevent="deleteSubscription(subscription.key)"
-                                        class="btn btn-danger btn-sm px-3">
-                                        Delete
-                                    </button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <button class="btn btn-success" @click="createSubscription">Add New Subscription</button>
-
-                </div>
-            </div>
         </div>
-    </div>
 </template>
     
 <script>
